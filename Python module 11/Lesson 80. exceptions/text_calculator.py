@@ -28,5 +28,10 @@ with open(os.path.abspath('calc.txt'), encoding='UTF-8', mode='r') as file:
         x = calculate(n)
         summa += x
         if x == 0:
-            print('Something went wrong')
+            print('Something went wrong in string:', ' '.join(n))
+            change = input('Would you like to change this expression? ')
+            if change == 'yes'.lower():
+                new_expr = input('Insert the new expression: ')
+
+            print(n)
     print(summa)
