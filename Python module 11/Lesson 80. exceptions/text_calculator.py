@@ -10,15 +10,17 @@ def calculate(expression):
 
         if operator == '+':
             results = n1 + n2
-        if operator == '-':
+        elif operator == '-':
             results = n1 - n2
-        if operator == '*':
+        elif operator == '*':
             results = n1 * n2
-        if operator == '/':
+        elif operator == '/':
             results = n1 / n2
+        else:
+            raise ValueError
         return results
     except ValueError as incorrect_value:
-        return 0
+        return None
 
 
 with open(os.path.abspath('calc.txt'), encoding='UTF-8', mode='r') as file:
@@ -26,12 +28,17 @@ with open(os.path.abspath('calc.txt'), encoding='UTF-8', mode='r') as file:
     for i in file:
         n = i.split()
         x = calculate(n)
-        summa += x
-        if x == 0:
+        if x is not None:
+            summa += x
+        else:
             print('Something went wrong in string:', ' '.join(n))
             change = input('Would you like to change this expression? ')
             if change == 'yes'.lower():
-                new_expr = input('Insert the new expression: ')
+                while True:
+                    new_expr = input('Insert the new expression: ').split()
+                    x = calculate(new_expr)
+                    if x is not None:
+                        summa += x
+                        break
 
-            print(n)
     print(summa)
