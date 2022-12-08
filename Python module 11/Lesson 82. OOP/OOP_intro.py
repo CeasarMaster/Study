@@ -45,3 +45,5 @@ car = Toyota('Black', 1000000, 200, 0)
 car.information()
 car.current_speed_change(125)
 print(car.current_speed)
+
+
