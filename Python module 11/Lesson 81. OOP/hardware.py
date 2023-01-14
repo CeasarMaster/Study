@@ -30,7 +30,7 @@ class Headphones:
 
     def information(self):
         print(
-            f'  Name: {self.headphones_name}\n  Sensitivity: {self.headphones_sensitivity}\n  Microphone: {self.headphones_micro}\n')
+            f' Headphones 1:\n  Name: {self.headphones_name}\n  Sensitivity: {self.headphones_sensitivity}\n  Microphone: {self.headphones_micro}\n')
 
 
 headphones_1 = Headphones(False)
