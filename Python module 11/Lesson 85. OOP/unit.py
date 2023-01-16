@@ -1,25 +1,27 @@
 class Unit:
-    def __init__(self, hp=0):
+    def __init__(self, hp=100):
         self.hp = hp
 
-    def get_damage(self):
-        return self.hp
+    def get_damage(self, damage=0):
+        self.hp -= damage
 
 
 class Soldier(Unit):
 
-    def get_damage(self):
-        print(f'Damage taken: {self.hp}')
+    def get_damage(self, damage):
+        self.hp -= damage
+        print(f'Health: {self.hp}')
 
 
 class Person(Unit):
 
-    def get_damage(self):
-        print(f'Damage taken: {self.hp * 2}')
+    def get_damage(self, damage):
+        self.hp -= damage * 2
+        print(f'Health: {self.hp}')
 
 
-soldier = Soldier(20)
-person = Person(20)
+soldier = Soldier()
+person = Person()
 
-soldier.get_damage()
-person.get_damage()
+soldier.get_damage(20)
+person.get_damage(20)
