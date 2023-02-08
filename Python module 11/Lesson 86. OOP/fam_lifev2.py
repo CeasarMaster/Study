@@ -9,6 +9,9 @@ class House:
         self.cat_food = cat_food
         self.dirt = dirt
 
+    def __str__(self):
+        return f'Money: {self.money}\nFood: {self.food}\nCat Food: {self.cat_food}\nDirt: {self.dirt}'
+
 
 house = House()
 
@@ -20,13 +23,17 @@ class Human:
         self.happiness = happiness
         self.satiety = satiety
 
+    def __str__(self):
+        return f'Name: {self.name}\nHappiness: {self.happiness}\nSatiety: {self.satiety}'
+
     def eat(self):
         # +satiety, -food
-        self.satiety += 10
-        house.food -= 10
-        print('Human is eating...')
-        print(f'Satiety: {self.satiety}')
-        print(f'Food left in the fridge: {house.food}')
+        if house.food >=10:
+            self.satiety += 10
+            house.food -= 10
+            print('Human is eating...')
+            print(f'Satiety: {self.satiety}')
+            print(f'Food left in the fridge: {house.food}')
 
     def stroke_cat(self):
         print('Cat is being stroked...')
@@ -80,13 +87,13 @@ human1 = Husband('Nikita')
 human2 = Wife('X')
 cat = Cat('Lucy')
 
-rand_num = random.randint(1, 6)
 for day in range(1, 365 + 1):
+    rand_num = random.randint(1, 6)
     print(f'\nDay {day}:\n')
     house.dirt += 5
-    if human1.satiety < 20:
+    if human1.satiety > 0 and human1.satiety < 20 and house.food >= 10:
         human1.eat()
-    if human2.satiety < 20:
+    elif human2.satiety > 0 and human2.satiety < 20 and house.food >= 10:
         human2.eat()
 
     elif human1.satiety <= 0:
@@ -99,6 +106,8 @@ for day in range(1, 365 + 1):
         print('Cat is dead...')
         break
 
+
+
     elif house.food < 10:
         human2.shop()
 
@@ -108,9 +117,10 @@ for day in range(1, 365 + 1):
     elif rand_num == 1:
         human1.work()
 
-    elif rand_num == 2:
+    elif rand_num == 2 and house.food >= 10:
         human1.eat()
         human2.eat()
 
     else:
         human1.play()
+    print(house, human1, human2, sep='\n\n')

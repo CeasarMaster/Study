@@ -15,47 +15,53 @@ class Programmer:
 
 
 class KillError(Exception):
-    pass
+    def __str__(self):
+        return 'KillError'
 
 
 class DrunkError(Exception):
-    pass
+    def __str__(self):
+        return 'DrunkError'
 
 
 class CarCrashError(Exception):
-    pass
+    def __str__(self):
+        return 'CarCrashError'
 
 
 class GluttonyError(Exception):
-    pass
+    def __str__(self):
+        return 'GluttonyError'
 
 
 class DepressionError(Exception):
-    pass
+    def __str__(self):
+        return 'DepressionError'
 
 
 programmer = Programmer()
-kill_error = KillError()
-drunk_error = DrunkError()
-car_crash = CarCrashError()
-gluttony_error = GluttonyError()
-depression_error = DepressionError()
+reasons = [
+    KillError(),
+    DrunkError(),
+    CarCrashError(),
+    GluttonyError(),
+    DepressionError()
+]
 
 
-def one_day():
-    with open(os.path.abspath('karma.log'), encoding='UTF-8', mode='w') as karma_log:
-        reason = [kill_error, drunk_error, car_crash, gluttony_error, depression_error]
-        try:
-            if random.randint(1, 10) == 1:
-                raise choice(reason)
+def one_day(file):
+    try:
+        if random.randint(1, 10) == 1:
+            raise choice(reasons)
 
 
-        except Exception as error:
-            karma_log.write(str(error))
+    except Exception as error:
+        file.write(f'{error}\n')
 
     return random.randint(1, 7)
 
 
-while programmer.get_karma() > 500:
-    programmer.set_karma(one_day())
-print('enlightenment achieved')
+with open(os.path.abspath('karma.log'), encoding='UTF-8', mode='w') as karma_log:
+    while programmer.get_karma() < 500:
+        programmer.set_karma(one_day(karma_log))
+print('Enlightenment achieved')
