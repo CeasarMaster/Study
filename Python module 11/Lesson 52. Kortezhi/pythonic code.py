@@ -9,7 +9,7 @@ students = {
         'name': 'Rob',
         'surname': 'Stepanov',
         'age': 24,
-        'interests': ['math', 'computer games', 'running']
+        'interests': ['math', 'computer Games', 'running']
     },
     3: {
         'name': 'Alexander',

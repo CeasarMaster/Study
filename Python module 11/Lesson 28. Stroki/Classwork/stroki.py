@@ -28,4 +28,5 @@ ages = input('Insert the ages: ').split()
 print(ages)
 shablon = input('Insert the message: ')
 for i in range(len(names)):
+
     print(shablon.format(name=names[i], age=ages[i]))

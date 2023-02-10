@@ -1,10 +1,10 @@
 '''n=[]
 
-with open('games.txt') as file:
+with open('Games.txt') as file:
     for i in file:
         print(i)
         n.append(i)
-with open('games.txt','r') as file:
+with open('Games.txt','r') as file:
     print(file.read())
 
 print(n)'''
