@@ -1,6 +1,6 @@
 import tkinter
 import time
-from PIL import ImageTk, Image
+
 
 
 def walking_text(data, font='Arial', size=14):
