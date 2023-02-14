@@ -3,30 +3,57 @@ import time
 from PIL import ImageTk, Image
 
 
-def print_data(event):
-    flag = False
+def walking_text(data, font='Arial', size=14):
     label['text'] = f''
-    button_start.configure(state='disabled')
+    label['font'] = (font, size)
     for i in data:
-        time.sleep(0.06)
+        time.sleep(0.04 )
         label['text'] += f' {i}'
         window.update()
+
+
+def print_data(event):
+    data = 'You play as a resident of a small town surrounded by dense forests,\n\n who suddenly finds themselves in the middle of a raging wildfire.\n\n Your goal is to escape the blaze and reach safety.'
+    button_start.configure(state='disabled')
+    walking_text(data)
     button_start.configure(state='active')
 
 
 def start_game():
+    data = 'Chapter 1\n\nThe Ignition'
+    button_start.destroy()
+    walking_text(data, size=20)
+    time.sleep(1)
     window.title('Game started')
+    main_game()
 
 
-flag = True
-data = 'You play as a resident of a small town surrounded by dense forests,\n\n who suddenly finds themselves in the middle of a raging wildfire.\n\n Your goal is to escape the blaze and reach safety.'
+def main_game():
+    label.destroy()
+    text_history = tkinter.Text(window, state='disabled', bg='black', fg='white', font=('Arial', 14))
+    text_history.pack()
+    text_history.place(x=0, y=0, relheight=0.75, relwidth=1)
+    label_health = tkinter.Label(window, text='Health:', bg='black', fg='white', font=('Arial', 14))
+    display_health = tkinter.Label(window, text='<==========>', bg='black', fg='white', font=('Arial', 14))
+    label_hunger = tkinter.Label(window, text='Hunger:', bg='black', fg='white', font=('Arial', 14))
+    display_hunger = tkinter.Label(window, text='<==========>', bg='black', fg='white', font=('Arial', 14))
+    label_health.pack()
+    label_hunger.pack()
+    display_health.pack()
+    display_hunger.pack()
+    label_health.place(x=0, y=830)
+    display_health.place(x=75, y=830)
+    label_hunger.place(x=0, y=930)
+    display_hunger.place(x=75, y=930)
+
+
 window = tkinter.Tk()
 window.title('Escape The Blaze')
 window.geometry('1920x1080')
 window.resizable(True, True)
 window.configure(background='black')
 label = tkinter.Label(window,
-                      text='Click anywhere to begin',
+                      text='Press Enter To Begin',
                       background='black', foreground='white', font=('Arial', 14))
 label.pack()
 label.place(anchor='center', relx=0.5, rely=0.5)
@@ -35,6 +62,5 @@ button_start = tkinter.Button(window, text='START GAME', background='black', for
                               command=start_game)
 button_start.pack()
 button_start.place(anchor='center', width=150, height=80, relx=0.5, rely=0.8)
-if flag:
-    window.bind('<ButtonPress>', print_data)
+window.bind('<Return>', print_data)
 window.mainloop()
