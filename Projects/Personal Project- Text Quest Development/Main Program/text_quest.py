@@ -8,7 +8,7 @@ def walking_text(data, font='Arial', size=14):
     label['text'] = f''
     label['font'] = (font, size)
     for i in data:
-        time.sleep(0.04)
+        time.sleep(0.01)
         label['text'] += f' {i}'
         window.update()
 
@@ -34,7 +34,7 @@ def main_game():
     text_history = tkinter.Text(window, state='disabled', bg='black', fg='white', font=('Arial', 14))
     text_entry = tkinter.Entry(window, width=230)
     text_entry.pack()
-    text_entry.place(x=300, y=850, relheight=0.07)
+    text_entry.place(relx=0.15, rely=0.8, relheight=0.07)
     text_history.pack()
     text_history.place(x=0, y=0, relheight=0.75, relwidth=1)
     send = tkinter.Button(window, text='SEND', background='black', foreground='white', font=('Arial', 14))
@@ -44,11 +44,11 @@ def main_game():
     display_health = tkinter.Label(window, text='<==========>', bg='black', fg='white', font=('Arial', 14))
     label_hunger = tkinter.Label(window, text='Hunger:', bg='black', fg='white', font=('Arial', 14))
     display_hunger = tkinter.Label(window, text='<==========>', bg='black', fg='white', font=('Arial', 14))
-    label_health.pack()
+    '''label_health.pack()
     label_hunger.pack()
     display_health.pack()
-    display_hunger.pack()
-    label_health.place(x=0, y=830)
+    display_hunger.pack()'''
+    label_health.place(relx=0, rely=0.75)
     display_health.place(x=75, y=830)
     label_hunger.place(x=0, y=930)
     display_hunger.place(x=75, y=930)
@@ -61,7 +61,6 @@ print(window_width)
 print(window_height)
 window.title('Escape The Blaze')
 window.attributes('-fullscreen', True)
-#window.geometry('1920x1080')
 window.resizable(True, True)
 window.configure(background='black')
 label = tkinter.Label(window,
