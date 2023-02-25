@@ -1,14 +1,19 @@
 import tkinter
 import time
-
 from PIL import ImageTk, Image
+from sys import platform
+
+macos = {'bg': 'black', 'fr': 'black'}
+windows = {'bg': 'black', 'fr': 'white'}
+
+print(platform)
 
 
 def walking_text(data, font='Arial', size=14):
     label['text'] = f''
     label['font'] = (font, size)
     for i in data:
-        time.sleep(0.01)
+        time.sleep(0.04)
         label['text'] += f' {i}'
         window.update()
 
@@ -35,7 +40,7 @@ def main_game():
     text_entry = tkinter.Entry(window)
     text_entry.place(relx=0.15, rely=0.8, relheight=0.07, relwidth=0.8)
     text_history.place(x=0, y=0, relheight=0.75, relwidth=1)
-    send = tkinter.Button(window, text='SEND', background='black', foreground='white', font=('Arial', 14))
+    send = tkinter.Button(window, text='SEND', background='black', foreground='black', font=('Arial', 14))
     send.place(relx=0.955, rely=0.8, relwidth=0.043, relheight=0.07)
     label_health = tkinter.Label(window, text='Health:', bg='black', fg='white', font=('Arial', 14))
     display_health = tkinter.Label(window, text='<==========>', bg='black', fg='white', font=('Arial', 14))
@@ -56,6 +61,12 @@ window.title('Escape The Blaze')
 window.attributes('-fullscreen', True)
 window.resizable(True, True)
 window.configure(background='black')
+
+
+'''img = ImageTk.PhotoImage(Image.open('/Users/nikitadereza/PycharmProjects/Study/Projects/Personal Project- Text Quest Development/Other/pictures/tree.png'))
+picture = tkinter.Label(window, image=img, width=113, height=233)
+picture.place(relx=0.3, rely=0.3)'''
+
 label = tkinter.Label(window,
                       text='Press Enter To Begin',
                       background='black', foreground='white', font=('Arial', 14))
