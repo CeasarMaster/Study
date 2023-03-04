@@ -1,1 +1,5 @@
-1__
+1__You looked around.__2
+2__You see various paths around you. However, you realize that the only way out is to venture into the forest but you dont know which path to take, so you decide to start looking for any people that may be around.__Insert "look for people" to look for anybody around.__look__3
+3__You start looking for people. After a few minutes of looking around for people you come across a group of people who are also trying to escape.__Insert "interact" to interact with the group of people.__interact__4
+4__You start talking to the group of people. You decide to work together and want to come up with a plan to escape the blaze.__Insert "plan" to create a plan with the group.__plan__5
+5__Your team decides to venture through the danger of the blazing forest as it is the only way to get to the evacuation center.__Insert "venture" to start your journey through the forest.__venture__6

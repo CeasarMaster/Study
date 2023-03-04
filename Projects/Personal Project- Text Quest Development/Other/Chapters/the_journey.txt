@@ -1,0 +1,7 @@
+1__You venture into the flaming forest, marking the start of your journey with only one thought in mind, getting to safety.__Insert "walk" to continue walking or insert "back up" to not continue ahead.__walk__2
+2__You continue walking. You quickly realise that the journey through the forest will be a treacherous one. The smoke is starting to choke your breath. You reach inside your bag and try to get hold of the respirator to help with the breathing.__Insert "bag" to look in your bag.__bag__3
+3__Luckily you are able to get hold of the mask before the smoke swells up inside your lungs to completion.__Insert "wear" to put on the mask.__wear__4
+4__You put on the mask.__Insert "continue" to continue the journey.__continue__5
+5__You continue walking through the blazing forest. On your path you observe the environment or rather... what is left of it. Logs covered in ash and corpses of woodland animals who were unfortunate enough to be caught in the eye of the storm. You have no time to mourn their losses, though. You suddenly come across a giant burning tree that blocks your path. The only way to continue is to find a way to remove that tree.__Insert "look" to look around for a tool to clear the path.__look__6
+6__You are looking around for supplies. Luckily, you spot a hatchet lying on the floor.__Insert "get" to pick up the hatchet.__get__7
+7__
