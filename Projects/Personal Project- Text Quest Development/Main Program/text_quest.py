@@ -1,8 +1,10 @@
+import os
 import tkinter
 import time
 from PIL import ImageTk, Image
 from sys import platform
 
+chapters = ['the_ignition', 'the_journey', 'the_plan']
 macos = {'bg': 'black', 'fr': 'black'}
 windows = {'bg': 'black', 'fr': 'white'}
 if platform == 'darwin':
@@ -13,12 +15,27 @@ elif platform == 'win32':
     soft_fr = windows['fr']
 
 
+def chapter_dialogue(chapter):
+    data = []
+    for i in chapter:
+        data.append(i.split('__'))
+    return data
+
+
 def walking_text(data, font='Arial', size=14):
     label['text'] = f''
     label['font'] = (font, size)
     for i in data:
         time.sleep(0.01)
         label['text'] += f' {i}'
+        window.update()
+
+
+def walking_dialogue(data, font='Arial', size=14):
+    text_history['font'] = (font, size)
+    for i in data:
+        time.sleep(0.01)
+        text_history['text'] += f' {i}'
         window.update()
 
 
@@ -40,7 +57,7 @@ def start_game():
 
 def main_game():
     label.destroy()
-    text_history = tkinter.Text(window, state='disabled', bg=soft_bg, fg=soft_fr, font=('Arial', 14))
+
     text_entry = tkinter.Entry(window)
     text_entry.place(relx=0.15, rely=0.8, relheight=0.07, relwidth=0.8)
     text_history.place(x=0, y=0, relheight=0.75, relwidth=1)
@@ -55,12 +72,18 @@ def main_game():
     label_hunger.place(relx=0, rely=0.84)
     display_hunger.place(relx=0.05, rely=0.84)
 
+    for j, i in enumerate(chapters):
+        with open(os.path.abspath(f'../Other/Chapters/{i}.txt'), encoding='UTF-8', mode='r') as file:
+            data = chapter_dialogue(file.readlines())
+            for line in data:
+                now = time.localtime()
+                current_time = time.strftime("%H:%M:%S", now)
+                ind = float(f'{line[0]}.0')
+                walking_dialogue(f'\n{current_time} {line[1]}\n{line[1]}')
 
 window = tkinter.Tk()
 window_height = window.winfo_height()
 window_width = window.winfo_width()
-print(window_width)
-print(window_height)
 window.title('Escape The Blaze')
 window.attributes('-fullscreen', True)
 window.resizable(True, True)
@@ -78,6 +101,7 @@ label.place(anchor='center', relx=0.5, rely=0.5)
 
 button_start = tkinter.Button(window, text='START GAME', background=soft_bg, foreground=soft_fr, font=('Arial', 14),
                               command=start_game)
+text_history = tkinter.Label(window, bg='white', fg='black', font=('Arial', 14))
 button_start.pack()
 button_start.place(anchor='center', width=150, height=80, relx=0.5, rely=0.8)
 window.bind('<Return>', print_data)
