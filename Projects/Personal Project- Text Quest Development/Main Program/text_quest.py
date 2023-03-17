@@ -6,7 +6,7 @@ from sys import platform
 from tkinter.messagebox import showwarning
 from main_game import *
 
-chapters = ['the_ignition', 'the_plan','the_journey']
+chapters = ['the_ignition', 'the_plan', 'the_journey', 'the_rescue', 'the_aftermath']
 macos = {'bg': 'black', 'fr': 'black'}
 windows = {'bg': 'black', 'fr': 'white'}
 if platform == 'darwin':
@@ -18,7 +18,8 @@ elif platform == 'win32':
 
 answers = ['']
 number = 0
-chapter_for_show = ['Chapter 2\n\nThe Plan', 'Chapter 3\n\nThe Journey' ]
+chapter_for_show = ['Chapter 2\n\nThe Plan', 'Chapter 3\n\nThe Journey', 'Chapter 4\n\nThe Rescue',
+                    'Chapter 5\n\nThe Aftermath']
 
 
 def main_game():
@@ -44,11 +45,11 @@ def main_game():
             showwarning('You died', "YOU DIED")
             window.destroy()
 
-
     text_entry = tkinter.Entry(window)
     text_entry.place(relx=0.15, rely=0.8, relheight=0.07, relwidth=0.8)
     text_history.place(x=0, y=0, relheight=0.75, relwidth=1)
-    send = tkinter.Button(window, text='SEND', background=soft_bg, foreground=soft_fr, font=('Arial', 14), command=button)
+    send = tkinter.Button(window, text='SEND', background=soft_bg, foreground=soft_fr, font=('Arial', 14),
+                          command=button)
     send.place(relx=0.955, rely=0.8, relwidth=0.043, relheight=0.07)
     label_health = tkinter.Label(window, text='Health:', bg=soft_bg, fg=soft_fr, font=('Arial', 14))
     display_health = tkinter.Label(window, text='<==========>', bg=soft_bg, fg=soft_fr, font=('Arial', 14))
@@ -98,6 +99,7 @@ def main_game():
             hulk()
             show_chapters()
         window.mainloop()
+
     storyline()
 
 
@@ -130,7 +132,6 @@ def print_data(event):
     button_start.configure(state='active')
 
 
-
 window = tkinter.Tk()
 window_height = window.winfo_height()
 window_width = window.winfo_width()
@@ -140,8 +141,8 @@ window.resizable(True, True)
 window.configure(background=soft_bg)
 
 text_history = tkinter.Label(window,
-                      text='Press Enter To Begin',
-                      background=soft_bg, foreground=soft_fr, font=('Arial', 14))
+                             text='Press Enter To Begin',
+                             background=soft_bg, foreground=soft_fr, font=('Arial', 14))
 text_history.pack()
 text_history.place(anchor='center', relx=0.5, rely=0.5)
 
