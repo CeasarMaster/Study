@@ -73,9 +73,27 @@ def main_game():
         elif number == 3:
             walking_dialogue(text_history, window, dia[3][0])
             answers[0] = dia[3][-1]
-        elif number == 3:
+        elif number == 4:
             walking_dialogue(text_history, window, dia[4][0])
             answers[0] = dia[4][-1]
+        elif number == 5:
+            walking_dialogue(text_history, window, dia[4][0])
+            answers[0] = dia[5][-1]
+        elif number == 6:
+            walking_dialogue(text_history, window, dia[4][0])
+            answers[0] = dia[6][-1]
+        elif number == 7:
+            walking_dialogue(text_history, window, dia[4][0])
+            answers[0] = dia[7][-1]
+        elif number == 8:
+            walking_dialogue(text_history, window, dia[4][0])
+            answers[0] = dia[8][-1]
+        elif number == 9:
+            walking_dialogue(text_history, window, dia[4][0])
+            answers[0] = dia[9][-1]
+        elif number == 10:
+            walking_dialogue(text_history, window, dia[4][0])
+            answers[0] = dia[10][-1]
         elif number == len(dia):
             hulk()
             show_chapters()
@@ -110,6 +128,7 @@ def print_data(event):
     button_start.configure(state='disabled')
     walking_text(window, text_history, data)
     button_start.configure(state='active')
+
 
 
 window = tkinter.Tk()
