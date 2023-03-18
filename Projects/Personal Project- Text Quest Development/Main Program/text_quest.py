@@ -18,8 +18,8 @@ elif platform == 'win32':
 
 answers = ['']
 number = 0
-chapter_for_show = ['Chapter 2\n\nThe Plan', 'Chapter 3\n\nThe Journey', 'Chapter 4\n\nThe Rescue',
-                    'Chapter 5\n\nThe Aftermath']
+chapter_for_show = ['Chapter 2\n\nThe Plan\n', 'Chapter 3\n\nThe Journey\n', 'Chapter 4\n\nThe Rescue\n',
+                    'Chapter 5\n\nThe Aftermath\n']
 
 
 def main_game():
@@ -65,6 +65,9 @@ def main_game():
         if number == 0:
             answers[0] = dia[0][-1]
             walking_dialogue(text_history, window, dia[0][0])
+        elif number == len(dia):
+            hulk()
+            show_chapters()
         elif number == 1:
             walking_dialogue(text_history, window, dia[1][0])
             answers[0] = dia[1][-1]
@@ -73,31 +76,34 @@ def main_game():
             answers[0] = dia[2][-1]
         elif number == 3:
             walking_dialogue(text_history, window, dia[3][0])
+
+            if len(chapters) == 0:
+                time.sleep(1)
+                window.destroy()
+                showwarning('Win', 'You ended game')
             answers[0] = dia[3][-1]
         elif number == 4:
             walking_dialogue(text_history, window, dia[4][0])
             answers[0] = dia[4][-1]
         elif number == 5:
-            walking_dialogue(text_history, window, dia[4][0])
+            walking_dialogue(text_history, window, dia[5][0], clean=True)
             answers[0] = dia[5][-1]
         elif number == 6:
-            walking_dialogue(text_history, window, dia[4][0])
+            walking_dialogue(text_history, window, dia[6][0])
             answers[0] = dia[6][-1]
         elif number == 7:
-            walking_dialogue(text_history, window, dia[4][0])
+            walking_dialogue(text_history, window, dia[7][0])
             answers[0] = dia[7][-1]
         elif number == 8:
-            walking_dialogue(text_history, window, dia[4][0])
+            walking_dialogue(text_history, window, dia[8][0])
             answers[0] = dia[8][-1]
         elif number == 9:
-            walking_dialogue(text_history, window, dia[4][0])
+            walking_dialogue(text_history, window, dia[9][0])
             answers[0] = dia[9][-1]
         elif number == 10:
-            walking_dialogue(text_history, window, dia[4][0])
+            walking_dialogue(text_history, window, dia[10][0])
             answers[0] = dia[10][-1]
-        elif number == len(dia):
-            hulk()
-            show_chapters()
+
         window.mainloop()
 
     storyline()
@@ -117,7 +123,7 @@ def start_game(chapter=None):
     if chapter is not None:
         data = chapter
     else:
-        data = 'Chapter 1\n\nThe Ignition'
+        data = 'Chapter 1\n\nThe Ignition\n'
     button_start.destroy()
     walking_text(window, text_history, data, size=20)
     time.sleep(1)

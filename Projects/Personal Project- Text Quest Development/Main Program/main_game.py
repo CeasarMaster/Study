@@ -20,7 +20,7 @@ def logic(i):
         for line in data:
             now = time.localtime()
             current_time = time.strftime("%H:%M:%S", now)
-            dia.append((f'\n{current_time} {line[1]}\n{line[2]}', line[-2]))
+            dia.append((f'\n\n{current_time} {line[1]}{line[2]}', line[-2]))
     return dia
 
 
@@ -35,14 +35,23 @@ def walking_text(window, label, data, font='Arial', size=14):
     label['text'] = f''
     label['font'] = (font, size)
     for i in data:
-        time.sleep(0.01)
+        time.sleep(0.02)
         label['text'] += f' {i}'
         window.update()
 
 
-def walking_dialogue(text_history, window, data, font='Arial', size=14):
+def walking_dialogue(text_history, window, data, font='Arial', size=14, clean=False):
     text_history['font'] = (font, size)
+    if clean:
+        text_history['text'] = ''
+        window.update()
+    l = 0
     for i in data:
-        time.sleep(0.01)
+        time.sleep(0.02)
         text_history['text'] += f' {i}'
+        l += 1
+        if l == 131:
+            text_history['text'] += f' \n'
+            l = 0
+
         window.update()
