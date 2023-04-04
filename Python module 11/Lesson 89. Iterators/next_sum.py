@@ -22,7 +22,7 @@ class NextSum:
         if self.counter > self.num_elements:
             raise StopIteration
         self.current_num, self.next_num = self.first_element, self.current_num + self.next_num
-        return self.next_num
+        return round(self.next_num, 2)
 
 
 while True:
