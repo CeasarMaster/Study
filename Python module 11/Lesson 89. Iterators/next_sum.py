@@ -30,3 +30,4 @@ while True:
     x = NextSum(n)
     for i in x:
         print(i)
+
