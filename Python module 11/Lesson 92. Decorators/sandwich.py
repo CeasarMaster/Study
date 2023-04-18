@@ -5,15 +5,26 @@ def bread(func: Callable):
     def wrapped_func(*args, **kwargs):
         print('</------\>')
         value = func(*args, **kwargs)
+        print('<\______/>')
+        return value
 
+    return wrapped_func
+
+
+def ingredients(func: Callable):
+    def wrapped_func(*args, **kwargs):
+        print(f'#tomato#')
+        value = func(*args, **kwargs)
+        print(f'~salad~')
         return value
 
     return wrapped_func
 
 
 @bread
-def sandwich():
-    print(f'#tomato#\n\n--ham--\n\n~salad~\n\n\___/')
+@ingredients
+def nachinka():
+    print(f'--ham--')
 
 
-sandwich()
+nachinka()
