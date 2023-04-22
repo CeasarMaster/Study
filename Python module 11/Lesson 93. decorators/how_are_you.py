@@ -48,19 +48,22 @@ from typing import Callable
 
 def logging(func: Callable):
     def wrapped_func(*args, **kwargs):
-
-        with open(os.path.abspath('function_errors.log'), encoding='UTF-8', mode='w') as logs:
+        value = None
+        print(func.__name__)
+        print(func.__doc__)
+        with open(os.path.abspath('function_errors.log'), encoding='UTF-8', mode='a') as logs:
             errors = []
+
             try:
-
                 value = func(*args, **kwargs)
-                raise ValueError
-                print(func, func.__doc__)
-            except BaseException as error:
-                errors.append(f'{error}')
-                logs.write(str(error))
 
-        return value
+
+            except BaseException as error:
+                print(error)
+                errors.append(f'{error}')
+                logs.write(f'{func.__name__}: \n')
+                logs.write(f'   {str(error)}\n')
+            return value
 
     return wrapped_func
 
@@ -70,10 +73,22 @@ def cubes():
     '''functions cubes returns the sum of cubed values'''
 
     n = 'fdgdghd'
-    summa = 0
+    summa = 'fghfghf'
     for i in range(1, 1000):
         summa += sum([j ** 3 for j in range(i)])
     return summa
 
 
+@logging
+def hello():
+    int('Hello')
+
+
+@logging
+def summa():
+    return sum(range(1, 6))
+
+
 cubes()
+hello()
+print(summa())

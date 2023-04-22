@@ -1,0 +1,19 @@
+
+cubes: 
+   can only concatenate str (not "int") to str
+hello: 
+   invalid literal for int() with base 10: 'Hello'
+cubes: 
+   can only concatenate str (not "int") to str
+hello: 
+   invalid literal for int() with base 10: 'Hello'
+cubes: 
+   can only concatenate str (not "int") to str
+cubes: 
+   can only concatenate str (not "int") to str
+hello: 
+   invalid literal for int() with base 10: 'Hello'
+cubes: 
+   can only concatenate str (not "int") to str
+hello: 
+   invalid literal for int() with base 10: 'Hello'
