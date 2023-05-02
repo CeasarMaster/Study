@@ -1,44 +1,105 @@
-class Human:
-    def __init__(self, name, age, gender):
-        self.name = name
-        self.age = age
-        self.gender = gender
+class X:
+    def __init__(self, letter='X'):
+        self.letter = letter
 
     def introduce(self):
-        print(f'Name: {self.name}\nAge: {self.age}\nGender: {self.gender}')
-
-    def think(self):
-        print(f'{self.name} is thinking...')
+        print(f'Hello, I am {self.letter}!')
 
 
-class Parent(Human):
-    def __init__(self, name, age, gender):
-        super().__init__(name, age, gender)
+class A(X):
+    def __init__(self, letter='A'):
+        super().__init__(letter)
+        self.letter = letter
 
     def introduce(self):
-        print(f'Parent Name: {self.name}\nParent Age: {self.age}\nParent Gender: {self.gender}')
-
-    def care(self):
-        print(f'Parent {self.name} is taking care of the child...')
+        print(f'Hello, I am {self.letter}!')
 
 
-class Worker(Human):
-    def __init__(self, name, age, gender):
-        super().__init__(name, age, gender)
+class B(X):
+    def __init__(self, letter='B'):
+        super().__init__(letter)
+        self.letter = letter
 
-    # def introduce(self):
-    #     print(f'Worker Name: {self.name}\nWorker Age: {self.age}\nWorker Gender: {self.gender}')
-
-    def work(self):
-        print(f'Worker {self.name} is working...')
+    def introduce(self):
+        print(f'Hello, I am {self.letter}!')
 
 
-class Citizen(Worker, Parent):
-    def __init__(self, name, age, gender):
-        super().__init__(name, age, gender)
+class C(X):
+    def __init__(self, letter='C'):
+        super().__init__(letter)
+        self.letter = letter
 
-    # def introduce(self):
-    #     print(f'Citizen Name: {self.name}\nCitizen Age: {self.age}\nCitizen Gender: {self.gender}')
+    def introduce(self):
+        print(f'Hello, I am {self.letter}!')
 
-    def pay_taxes(self):
-        print(f'Citizen {self.name} pays the taxes...')
+
+class D(X):
+    def __init__(self, letter='D'):
+        super().__init__(letter)
+        self.letter = letter
+
+    def introduce(self):
+        print(f'Hello, I am {self.letter}!')
+
+
+class E(A, B):
+    def __init__(self, letter='E'):
+        super().__init__(letter)
+        self.letter = letter
+
+    def introduce(self):
+        print(f'Hello, I am {self.letter}!')
+
+
+class F(B, C):
+    def __init__(self, letter='F'):
+        super().__init__(letter)
+        self.letter = letter
+
+    def introduce(self):
+        print(f'Hello, I am {self.letter}!')
+
+
+class G(B, C, D):
+    def __init__(self, letter='G'):
+        super().__init__(letter)
+        self.letter = letter
+
+    def introduce(self):
+        print(f'Hello, I am {self.letter}!')
+
+
+class H(C, D):
+    def __init__(self, letter='H'):
+        super().__init__(letter)
+        self.letter = letter
+
+    def introduce(self):
+        print(f'Hello, I am {self.letter}!')
+
+
+class J(E, F):
+    def __init__(self, letter='J'):
+        super().__init__(letter)
+        self.letter = letter
+
+    def introduce(self):
+        print(f'Hello, I am {self.letter}!')
+
+
+class K(F, G, H):
+    def __init__(self, letter='K'):
+        super().__init__(letter)
+        self.letter = letter
+
+    def introduce(self):
+        print(f'Hello, I am {self.letter}!')
+
+
+class Z(J, K):
+    def __init__(self, letter='Z'):
+        super().__init__(letter)
+        self.letter = letter
+
+    def introduce(self):
+        print(f'Hello, I am {self.letter}!')
