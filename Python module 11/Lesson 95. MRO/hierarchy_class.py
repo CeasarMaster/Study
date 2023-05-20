@@ -19,7 +19,8 @@ class Worker(GainExp):
         super().__init__(exp)
 
     def work(self):
-        pass
+        print('Working...')
+        self.exp += 50
 
 
 class CanCode(GainExp):
@@ -27,7 +28,8 @@ class CanCode(GainExp):
         super().__init__(exp)
 
     def code(self):
-        pass
+        print('Coding...')
+        self.exp += 50
 
 
 class CanDrive(Human):
@@ -36,7 +38,8 @@ class CanDrive(Human):
         super().__init__(name, age, exp)
 
     def drive(self):
-        pass
+        print('Driving...')
+        self.exp += 50
 
 
 class Student(Human, Worker):
@@ -44,7 +47,8 @@ class Student(Human, Worker):
         super().__init__(name, age, exp)
 
     def study(self):
-        pass
+        print(f'Student {self.name} is studying...')
+        self.exp += 50
 
 
 class Male(Human, Worker, CanCode):
