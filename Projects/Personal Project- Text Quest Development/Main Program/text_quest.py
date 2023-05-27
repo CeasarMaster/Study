@@ -7,7 +7,7 @@ from tkinter.messagebox import showwarning
 from main_game import *
 
 chapters = ['the_ignition', 'the_plan', 'the_journey', 'the_rescue', 'the_aftermath']
-macos = {'bg': 'black', 'fr': 'black'}
+macos = {'bg': 'black', 'fr': 'white'}
 windows = {'bg': 'black', 'fr': 'white'}
 if platform == 'darwin':
     soft_bg = macos['bg']
@@ -48,7 +48,7 @@ def main_game():
     text_entry = tkinter.Entry(window)
     text_entry.place(relx=0.15, rely=0.8, relheight=0.07, relwidth=0.8)
     text_history.place(x=0, y=0, relheight=0.75, relwidth=1)
-    send = tkinter.Button(window, text='SEND', background=soft_bg, foreground=soft_fr, font=('Arial', 14),
+    send = tkinter.Button(window, text='SEND', background=soft_bg, foreground='black', font=('Arial', 14),
                           command=button)
     send.place(relx=0.955, rely=0.8, relwidth=0.043, relheight=0.07)
     label_health = tkinter.Label(window, text='Health:', bg=soft_bg, fg=soft_fr, font=('Arial', 14))

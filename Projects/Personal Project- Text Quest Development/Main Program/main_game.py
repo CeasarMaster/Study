@@ -19,7 +19,7 @@ def logic(i):
         dia = []
         for line in data:
             now = time.localtime()
-            current_time = time.strftime("%H:%M:%S", now)
+            current_time = time.strftime("%H:%M", now)
             dia.append((f'\n\n{current_time} {line[1]}{line[2]}', line[-2]))
     return dia
 
