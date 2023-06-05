@@ -1,0 +1,10 @@
+NOTE: THIS IS AN EARLY STAGE OF THE SCRIPT AND IT MIGHT LACK SOME FEATURES
+
+File Finder is a script which allows users to search for a keyword within a given file and highlight it.
+This script is only able to work in a console and requires Python3 to run.
+
+How to use:
+    1. Download and install Python3 on your system to run this script: https://www.python.org/downloads/
+    2. In order for this script to work, make sure that the file you want to scrape is inside the folder with the script
+    3. Run "file_finder.py" in your Python IDE
+

@@ -1,0 +1,5 @@
+hello
+true
+false
+bicycle
+D:\Programming\Python\Python Material\pip
