@@ -1,7 +1,6 @@
 import os
 import tkinter
 import time
-from PIL import ImageTk, Image
 from sys import platform
 from tkinter.messagebox import showwarning
 from main_game import *

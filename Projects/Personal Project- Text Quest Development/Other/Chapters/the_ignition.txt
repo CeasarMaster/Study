@@ -1,4 +1,4 @@
-1__You wake up and noticed a smell of something burning you suddenly hear the sound of fire alarms and decide to look out of the window.__Insert "look" into the chatbox to look out of the window.__look__2
+1__You wake up and notice a smell of something burning you suddenly hear the sound of fire alarms and decide to look out of the window.__Insert "look" into the chatbox to look out of the window.__look__2
 2__You look out of the window...You see a red glow out of the window. You quickly realize that the forest around your town is on fire, and the winds are pushing the flames towards your home.__Insert "stay" in the chatbox to stay home or insert "pack" in the chatbox to pack your things and leave the house.__pack__3
 3__You grabbed your essentials and went out of the house.__Insert "walk" to walk on the main road.__walk__4
 4__You are walking on the main road, however after a few meters you find out that the road is blocked by falling trees and raging fires.You decide to look for an alternative path.__Insert "look" to look around.__look__5

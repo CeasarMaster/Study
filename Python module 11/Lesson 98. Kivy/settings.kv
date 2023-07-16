@@ -1,0 +1,60 @@
+PageLayout:
+    BoxLayout:
+        id: "task_description"
+        background_color: [0,0,0,1]
+        orientation: 'vertical'
+        Label:
+            text: "name"
+            color: 0,0,0,1
+            canvas.before:
+                Color:
+                    rgba: 1, 1, 1, 1
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+        Label:
+            text: "decription"
+            color: 0,0,0,1
+            canvas.before:
+                Color:
+                    rgba: 1, 1, 1, 1
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+        Button:
+            background_normal: ''
+            background_color: 1, 1, 1, 1
+            text: "Закрыть"
+            color: 0,0,0,1
+            canvas.before:
+                Color:
+                    rgba: .5, .5, .5, 1
+                Line:
+                    width: 2
+                    rectangle: self.x, self.y, self.width, self.height
+    BoxLayout:
+        orientation: 'vertical'
+        # this layout is populated with Button widgets in app code
+        id: entries_box
+    BoxLayout:
+        id: "create_task"
+        background_color: [0,0,0,1]
+        orientation: 'vertical'
+        TextInput:
+            background_color: [1,1,1,1]
+            text: "Введите имя"
+        TextInput:
+            background_color: [1,1,1,1]
+            text: "Введите описание"
+        Button:
+            background_normal: ''
+            background_color: 1, 1, 1, 1
+            text: "Подтвердить"
+            color: 0,0,0,1
+            on_press: app.command(self)
+            canvas.before:
+                Color:
+                    rgba: .5, .5, .5, 1
+                Line:
+                    width: 2
+                    rectangle: self.x, self.y, self.width, self.height
