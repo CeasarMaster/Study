@@ -10,6 +10,7 @@ from kivy.uix.textinput import TextInput
 from kivy.uix.togglebutton import ToggleButton
 from kivy.uix.switch import Switch
 from kivy.uix.textinput import TextInput
+from kivy.uix.gridlayout import GridLayout
 from kivy.lang import Builder
 
 
@@ -114,7 +115,7 @@ class TestSlider(App):
 
 '''The ProgressBar widget is used to visualize the progress of some task.'''
 
-Builder.load_file('progress.kv')
+# Builder.load_file('progress.kv')
 
 class MyLayout(Widget):
 	def press_it(self):
@@ -145,6 +146,41 @@ class AwesomeApp(App):
 class TestTextInput(App):
       def build(self):
             #To create a singleline TextInput, set the TextInput.multiline property to False
-            return TextInput(text='hello world', multiline=Falsemoon)
+            return TextInput(text='hello world', multiline=False)
             
-TestTextInput().run()
+# TestTextInput().run()
+
+
+'''The ToggleButton widget acts like a checkbox. When you touch or click it, the state toggles between ‘normal’ and ‘down’ (as opposed to a Button that is only ‘down’ as long as it is pressed).
+
+Toggle buttons can also be grouped to make radio buttons - only one button in a group can be in a ‘down’ state. The group name can be a string or any other hashable Python object:
+
+btn1 = ToggleButton(text='Male', group='sex',)
+btn2 = ToggleButton(text='Female', group='sex', state='down')
+btn3 = ToggleButton(text='Mixed', group='sex')
+Only one of the buttons can be ‘down’/checked at the same time.'''
+
+class ToggleApp(App):
+      def build(self):
+            button = ToggleButton(text='Toggle me')
+            return button
+      
+# if __name__=='__main__':
+#    ToggleApp().run()
+
+
+'''The Switch widget is active or inactive, like a mechanical light switch. The user can swipe to the left/right to activate/deactivate it:
+
+switch = Switch(active=True)'''
+
+
+class SwitchApp(App):
+      def build(self):
+            switch = Switch(active=False)
+            return switch
+      
+# SwitchApp().run()
+
+
+
+

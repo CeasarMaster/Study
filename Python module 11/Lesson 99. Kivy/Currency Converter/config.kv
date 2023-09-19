@@ -1,0 +1,157 @@
+# converter configuration
+
+<MainScreen>:
+
+    BoxLayout:
+        spacing: 10
+        padding: 10
+        orientation: 'vertical'
+
+        TextInput:
+            id: amount_in
+            font_size: 80
+            height: 10
+            multiline: False
+            size_hint: (1, 0.5)
+            text: '0'
+
+
+        Spinner:
+            id: currency_in
+            size_hint: None, None
+            size: 100, 44
+            pos_hint: {'center': (.5, .5)}
+            text: 'USD'
+            values: 'RUB', 'EUR', 'GBP', 'CNY', 'USD' ,'BYN', 'AED'
+
+        Button:
+            id: btnconvert
+            background_normal: 'arrows.PNG'
+            size_hint: 0.1, 0.15
+            pos_hint: {'x':.9, 'center':0.5} 
+            on_press: app.calculations(self)
+                    
+
+        Spinner:
+            id: currency_out
+            margin: 30
+            size_hint: None, None
+            size: 100, 44
+            pos_hint: {'bottom': (.5, .5)}
+            text: 'USD'
+            values: 'RUB', 'EUR', 'GBP', 'CNY', 'USD' ,'BYN', 'AED'
+
+
+
+        TextInput:
+            id: amount_out
+            font_size: 80
+            height: 10
+            multiline: False
+            size_hint: (1, 0.5)
+            text: '0'
+
+
+
+<LoginScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        spacing: 10
+        padding: 10
+        Image:
+            source: 'logo.png'
+            size_hint: 1, 0.5
+        Label:
+            text: 'Username:'
+            font_size: 35
+            size_hint: (.12, .03)
+            color: 0, 0, 0, 1
+        TextInput:
+            id: username
+            size_hint: (1, .1)
+            multiline: False
+            text: ''
+
+
+        Label:
+            text: 'Password:'
+            font_size: 35
+            size_hint: (.12, .03)
+            color: 0, 0, 0, 1
+
+        TextInput:
+            id: password
+            multiline: False
+            size_hint: (1, .1)
+            password: True
+            text: ''
+
+        Button:
+            id: login_btn
+            background_normal: 'login.png'
+            size_hint: 0.14, 0.05
+            pos_hint: {'x':.85, 'center':0.5}
+            on_press: app.login(self)
+
+        Button:
+            id: register_btn
+            background_normal: 'register.png'
+            size_hint: 0.14, 0.05
+            pos_hint: {'x':.85, 'center':0.5}
+            on_press: root.manager.current = 'Register'
+
+<RegisterScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        spacing: 10
+        padding: 10
+
+        Image:
+            source: 'logo.png'
+            size_hint: 1, 0.5
+
+        Label:
+            text: 'Email:'
+            font_size: 35
+            size_hint: (.07, .03)
+            color: 0, 0, 0, 1
+
+        TextInput:
+            id: name 
+            multiline: False
+            size_hint: (1, .1)
+            text: ''
+        
+        Label: 
+            text: 'Create Username:'
+            font_size: 35
+            size_hint: (.18, .03)
+            color: 0, 0, 0, 1
+
+        TextInput:
+            id: new_user
+            multiline: False
+            size_hint: (1, .1)
+            text: ''
+        
+        Label: 
+            text: 'Create Password:'
+            font_size: 35
+            size_hint: (.18, .03)
+            color: 0, 0, 0, 1
+
+        TextInput:
+            id: new_password
+            multiline: False
+            size_hint: (1, .1)
+            text: ''
+        Button:
+            id: new_register
+            background_normal: 'register.png'
+            size_hint: 0.14, 0.06
+            pos_hint: {'x':.85, 'center':0.5}
+            on_press: app.register(self)
+                
+    
+    
+     
