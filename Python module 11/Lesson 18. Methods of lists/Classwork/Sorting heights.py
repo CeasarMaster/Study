@@ -1,5 +1,0 @@
-height1 = list(range(160, 177, 2))
-height2 = list(range(162, 180, 3))
-height1.extend(height2)
-height1.sort()
-print(height1)

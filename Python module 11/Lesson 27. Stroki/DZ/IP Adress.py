@@ -1,5 +1,0 @@
-ip_address1 = int(input('Insert a number from 0-255: '))
-ip_address2 = int(input('Insert a number from 0-255: '))
-ip_address3 = int(input('Insert a number from 0-255: '))
-ip_address4 = int(input('Insert a number from 0-255: '))
-print('{}.{}.{}.{}'.format(ip_address1, ip_address2, ip_address3, ip_address4))
